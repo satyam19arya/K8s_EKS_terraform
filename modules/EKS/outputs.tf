@@ -1,3 +1,3 @@
 output "EKS_CLUSTER_NAME" {
-    value = aws_eks_cluster.eks.id
+  value = aws_eks_cluster.eks.id
 }

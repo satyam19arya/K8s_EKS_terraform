@@ -24,5 +24,5 @@ output "PRI_SUB_4_B_ID" {
   value = aws_subnet.pri-sub-4-b.id
 }
 output "IGW_ID" {
-    value = aws_internet_gateway.internet_gateway
+  value = aws_internet_gateway.igw.id
 }

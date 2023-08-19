@@ -1,4 +1,3 @@
-
 variable "REGION" {}
 variable "PROJECT_NAME" {}
 variable "VPC_CIDR" {}
@@ -6,3 +5,9 @@ variable "PUB_SUB_1_A_CIDR" {}
 variable "PUB_SUB_2_B_CIDR" {}
 variable "PRI_SUB_3_A_CIDR" {}
 variable "PRI_SUB_4_B_CIDR" {}
+variable "PUB_SUB_1_A_ID" {}
+variable "PUB_SUB_2_B_ID" {}
+variable "IGW_ID" {}
+variable "VPC_ID" {}
+variable "PRI_SUB_3_A_ID" {}
+variable "PRI_SUB_4_B_ID" {}
