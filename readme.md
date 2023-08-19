@@ -47,3 +47,11 @@ terraform validate
 terraform plan
 terraform apply
 ```
+
+After creating ECS cluster, run the following commands
+```sh
+aws eks update-kubeconfig --region REGION-CODE --name YOUR-CLUSTER-NAME
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
+kubectl get pods -n argocd
+```
