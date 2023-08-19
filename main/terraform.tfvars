@@ -1,0 +1,7 @@
+REGION           = "us-east-1"
+PROJECT_NAME     = "Todo-App-EKS"
+VPC_CIDR         = "172.25.0.0/16"
+PUB_SUB_1_A_CIDR = "172.25.1.0/24"
+PUB_SUB_2_B_CIDR = "172.25.2.0/24"
+PRI_SUB_3_A_CIDR = "172.25.3.0/24"
+PRI_SUB_4_B_CIDR = "172.25.4.0/24"
