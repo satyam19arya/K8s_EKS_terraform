@@ -11,12 +11,12 @@ module "VPC" {
 }
 
 module "IAM" {
-  source       = "../modules/IAM"
+  source       = "../modules/iam"
   PROJECT_NAME = var.PROJECT_NAME
 }
 
 module "EKS" {
-  source               = "../modules/EKS"
+  source               = "../modules/eks"
   PROJECT_NAME         = var.PROJECT_NAME
   EKS_CLUSTER_ROLE_ARN = module.IAM.EKS_CLUSTER_ROLE_ARN
   PUB_SUB_1_A_ID       = module.VPC.PUB_SUB_1_A_ID
@@ -26,7 +26,7 @@ module "EKS" {
 }
 
 module "NODE_GROUP" {
-  source           = "../modules/Node-group"
+  source           = "../modules/node_group"
   EKS_CLUSTER_NAME = module.EKS.EKS_CLUSTER_NAME
   NODE_GROUP_ARN   = module.IAM.NODE_GROUP_ROLE_ARN
   PRI_SUB_3_A_ID   = module.VPC.PRI_SUB_3_A_ID
