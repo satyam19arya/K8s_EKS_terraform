@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "learning-terraform"
-    key    = "backend/Todo-app-eks.tfstate"
-    region = "us-east-1"
-    dynamodb_table = "dynamoDB-state-locking"
+    bucket         = "terraform-state-file-2-tier-app"
+    key            = "k8s/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "2-tier-app"
   }
 }

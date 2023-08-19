@@ -1,4 +1,3 @@
-
 # creating VPC
 module "VPC" {
   source           = "../modules/vpc"
@@ -11,21 +10,8 @@ module "VPC" {
   PRI_SUB_4_B_CIDR = var.PRI_SUB_4_B_CIDR
 }
 
-# cretea NAT-NAT-GW
-module "NAT-GW" {
-  source = "../modules/nat-gw"
-
-  PUB_SUB_1_A_ID = module.VPC.PUB_SUB_1_A_ID
-  IGW_ID         = module.VPC.IGW_ID
-  PUB_SUB_2_B_ID = module.VPC.PUB_SUB_2_B_ID
-  VPC_ID         = module.VPC.VPC_ID
-  PRI_SUB_3_A_ID = module.VPC.PRI_SUB_3_A_ID
-  PRI_SUB_4_B_ID = module.VPC.PRI_SUB_4_B_ID
-}
-
-
 module "IAM" {
-  source = "../modules/IAM"
+  source       = "../modules/IAM"
   PROJECT_NAME = var.PROJECT_NAME
 }
 
@@ -38,7 +24,6 @@ module "EKS" {
   PRI_SUB_3_A_ID       = module.VPC.PRI_SUB_3_A_ID
   PRI_SUB_4_B_ID       = module.VPC.PRI_SUB_4_B_ID
 }
-
 
 module "NODE_GROUP" {
   source           = "../modules/Node-group"
