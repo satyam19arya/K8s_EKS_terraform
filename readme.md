@@ -1,6 +1,6 @@
-# 🚀 Provisioning the Amazon EKS cluster using Terraform
+# Provisioning the Amazon EKS cluster using Terraform
 
-## 🏠 Architecture
+## Architecture
  Coming soon
 
 ## 🖥️ Installation of Terraform
@@ -28,7 +28,7 @@ terraform {
   }
 }
 ```
-### 🏠Lets setup the variable for our Infrastructure
+### Lets setup the variable for our Infrastructure
 Go to K8s_EKS_terraform/main/terraform.tfvars
 ```javascript
 REGION           = "us-east-1"
