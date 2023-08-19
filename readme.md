@@ -1,33 +1,9 @@
-# 🚀 Provisioning the Amazon EKS cluster using Terraform -4th
-
-✨This repository containe the code of terrafor files. which we can use to provision Amazon EKS cluster.
+# 🚀 Provisioning the Amazon EKS cluster using Terraform
 
 ## 🏠 Architecture
-![Architecture of the application](architecture.gif)
-
-## 🖥️ Tech Stack
-- Reactjs
-
-## 💶 Notes and Links
-**I've divided my Blog into four parts**
-
-This is the 2nd Part or blog
-
-- 1st Blog: [🔗 Links](https://www.showwcase.com/show/35840/deploying-dockerized-app-on-aws-eks-cluster-using-argocd-and-gitops-methodology-with-circleci)
-
-- 2nd Blog: [🔗 Links](https://www.showwcase.com/show/35778/provisioning-the-amazon-eks-cluster-using-terraform)
-
-
-- 3rd Blog: [🔗 Links](https://www.showwcase.com/show/35857/setup-pipeline-using-circleci-update-github-kubernetes-manifest-repo-and-push-image-on-docker)
-
-- 4th Blog: [🔗 Links](https://www.showwcase.com/show/35858/install-argocd-on-the-eks-cluster-and-configure-sync-with-github-manifest-repository)
-
-
+// Coming soon
 
 ## 🖥️ Installation of Terraform
-
-**Note**: Follow blog to Install the Terraform and other dependency. [Terrafrom](https://developer.hashicorp.com/terraform/downloads)
-
 1️⃣ Clone the repo first
 ```sh
 git clone https://github.com/AnkitJodhani/kube_terraform-4thWeekOfCloudOps.git
