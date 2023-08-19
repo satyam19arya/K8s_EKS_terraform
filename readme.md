@@ -50,7 +50,8 @@ terraform apply
 
 After creating ECS cluster, run the following commands
 ```sh
-aws eks update-kubeconfig --region REGION-CODE --name YOUR-CLUSTER-NAME
+aws eks update-kubeconfig --region REGION_NAME --name YOUR-CLUSTER-NAME
+aws eks describe-cluster --name "YOUR-CLUSTER-NAME" --region REGION_NAME
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
 kubectl get pods -n argocd
