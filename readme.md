@@ -55,11 +55,21 @@ aws eks describe-cluster --name "YOUR-CLUSTER-NAME" --region REGION_NAME
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
 kubectl get pods -n argocd
+kubectl get svc -n argocd
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+kubectl get svc -n argocd
 export ARGOCD_SERVER=`kubectl get svc argocd-server -n argocd -o json | jq --raw-output '.status.loadBalancer.ingress[0].hostname'`
 export ARGO_PWD=`kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d`
 argocd login $ARGOCD_SERVER --username admin --password $ARGO_PWD --insecure
 kubectl apply -f argocd.yaml
 echo $ARGOCD_SERVER
 echo $ARGO_PWD
+```
+
+To install the ArgoCD CLI. run the following commands
+```sh
+sudo curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+sudo chmod +x /usr/local/bin/argocd
+argo version
+argocd login $ARGOCD_SERVER --username admin --password $ARGO_PWD --insecure
 ```
