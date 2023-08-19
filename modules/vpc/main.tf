@@ -6,10 +6,7 @@ resource "aws_vpc" "vpc" {
   enable_dns_support   = true
   enable_classiclink   = false
 
-  # Enable/disable ClassicLink DNS Support for the VPC.
   enable_classiclink_dns_support = false
-
-  # Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC.
   assign_generated_ipv6_cidr_block = false
 
   tags = {
@@ -122,7 +119,7 @@ resource "aws_eip" "EIP-NAT-GW-A" {
   }
 }
 
-# allocate elastic ip. this eip will be used for the nat-gateway in the public subnet pub-sub-2-b
+# This eip will be used for the nat-gateway in the public subnet pub-sub-2-b
 resource "aws_eip" "EIP-NAT-GW-B" {
   vpc = true
 
@@ -155,7 +152,6 @@ resource "aws_nat_gateway" "NAT-GW-B" {
   }
 
   # to ensure proper ordering, it is recommended to add an explicit dependency
-  # on the internet gateway for the vpc.
   depends_on = [aws_internet_gateway.internet_gateway]
 }
 
