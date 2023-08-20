@@ -1,11 +1,3 @@
-output "REGION" {
-  value = var.REGION
-}
-
-output "PROJECT_NAME" {
-  value = var.PROJECT_NAME
-}
-
 output "PUB_SUB_1_A_ID" {
   value = aws_subnet.pub-sub-1-a.id
 }

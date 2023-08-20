@@ -1,6 +1,4 @@
-
 resource "aws_eks_cluster" "eks" {
-  # Name of the cluster.
   name = var.PROJECT_NAME
 
   # The Amazon Resource Name (ARN) of the IAM role that provides permissions for 
@@ -28,5 +26,4 @@ resource "aws_eks_cluster" "eks" {
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Cluster handling.
   # Otherwise, EKS will not be able to properly delete EKS managed EC2 infrastructure such as Security Groups.
-
 }
