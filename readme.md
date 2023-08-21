@@ -61,6 +61,9 @@ kubectl get svc -n argocd
 sudo apt  install jq
 export ARGOCD_SERVER=`kubectl get svc argocd-server -n argocd -o json | jq --raw-output '.status.loadBalancer.ingress[0].hostname'`
 export ARGO_PWD=`kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d`
+wget https://github.com/argoproj/argo-cd/releases/download/v2.4.14/argocd-linux-amd64
+chmod +x argocd-linux-amd64
+sudo mv argocd-linux-amd64 /usr/local/bin/argocd
 argocd login $ARGOCD_SERVER --username admin --password $ARGO_PWD --insecure
 kubectl apply -f argocd.yaml
 echo $ARGOCD_SERVER
