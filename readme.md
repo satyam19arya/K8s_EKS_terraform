@@ -3,18 +3,18 @@
 ## Architecture
  Coming soon
 
-## 🖥️ Installation of Terraform
+## Steps
 1️⃣ Clone the repo first
 ```sh
 git clone https://github.com/satyam19arya/K8s_EKS_terraform.git
 ```
-2️⃣ let install dependency to deploy the application 
+2️⃣ Run the following commands
 ```sh
 cd K8s_EKS_terraform/main
 terraform init
 ```
 
-3️⃣ edit below file accoding to your configuration
+3️⃣ Edit below file according to your configuration
 ```sh
 vim K8s_EKS_terraform/main/backend.tf
 ```
@@ -22,7 +22,7 @@ vim K8s_EKS_terraform/main/backend.tf
 terraform {
   backend "s3" {
     bucket = "BUCKET_NAME"
-    key    = "backend/FILE_NAME_TO_STORE_STATE.tfstate"
+    key    = "k8s/FILE_NAME_TO_STORE_STATE.tfstate"
     region = "us-east-1"
     dynamodb_table = "dynamoDB_TABLE_NAME"
   }
