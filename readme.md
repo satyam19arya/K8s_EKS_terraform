@@ -69,11 +69,3 @@ kubectl apply -f argocd.yaml
 echo $ARGOCD_SERVER
 echo $ARGO_PWD
 ```
-
-To install the ArgoCD CLI. run the following commands
-```sh
-sudo curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
-sudo chmod +x /usr/local/bin/argocd
-argo version
-argocd login $ARGOCD_SERVER --username admin --password $ARGO_PWD --insecure
-```
