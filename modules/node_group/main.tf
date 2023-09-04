@@ -49,9 +49,9 @@ resource "aws_eks_node_group" "nodes_general" {
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Node Group handling.
   # Otherwise, EKS will not be able to properly delete EC2 Instances and Elastic Network Interfaces.
-    depends_on = [
-      aws_iam_role_policy_attachment.amazon_eks_worker_node_policy_general,
-      aws_iam_role_policy_attachment.amazon_eks_cni_policy_general,
-      aws_iam_role_policy_attachment.amazon_ec2_container_registry_read_only,
-    ]
+  depends_on = [
+    aws_iam_role_policy_attachment.amazon_eks_worker_node_policy_general,
+    aws_iam_role_policy_attachment.amazon_eks_cni_policy_general,
+    aws_iam_role_policy_attachment.amazon_ec2_container_registry_read_only,
+  ]
 }
