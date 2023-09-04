@@ -1,7 +1,8 @@
 # Provisioning the Amazon EKS cluster using Terraform
 
 ## Architecture
- Coming soon
+ <img width="659" alt="image" src="https://github.com/satyam19arya/K8s_EKS_terraform/assets/77580311/aa56d89e-2ede-46d5-85a5-9f2fecad4200">
+
 
 ## Steps
 1️⃣ Clone the repo first
