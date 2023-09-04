@@ -1,5 +1,5 @@
 REGION           = "us-east-1"
-PROJECT_NAME     = "Todo-App-EKS"
+PROJECT_NAME     = "MERN-App-EKS"
 VPC_CIDR         = "172.25.0.0/16"
 PUB_SUB_1_A_CIDR = "172.25.1.0/24"
 PUB_SUB_2_B_CIDR = "172.25.2.0/24"
