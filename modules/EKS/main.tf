@@ -1,8 +1,7 @@
 resource "aws_eks_cluster" "eks" {
   name = var.PROJECT_NAME
 
-  # The Amazon Resource Name (ARN) of the IAM role that provides permissions for 
-  # the Kubernetes control plane to make calls to AWS API operations on your behalf
+  # The ARN of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf
   role_arn = var.EKS_CLUSTER_ROLE_ARN
 
   # Desired Kubernetes master version
@@ -26,4 +25,9 @@ resource "aws_eks_cluster" "eks" {
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Cluster handling.
   # Otherwise, EKS will not be able to properly delete EKS managed EC2 infrastructure such as Security Groups.
+  depends_on = [
+    aws_iam_role_policy_attachment.amazon_eks_worker_node_policy_general,
+    aws_iam_role_policy_attachment.amazon_eks_cni_policy_general,
+    aws_iam_role_policy_attachment.amazon_ec2_container_registry_read_only,
+  ]
 }

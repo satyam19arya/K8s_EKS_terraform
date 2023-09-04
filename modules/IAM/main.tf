@@ -37,13 +37,11 @@ resource "aws_iam_role_policy_attachment" "elastic_load_balancing_full_access" {
   role       = aws_iam_role.eks_cluster_role.name
 }
 
-
 # Resource: aws_iam_role
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role
 
 # Create IAM role for EKS Node Group
 resource "aws_iam_role" "nodes_general" {
-  # The name of the role
   name = "${var.PROJECT_NAME}-Node-group-role"
 
   # The policy that grants an entity permission to assume the role.
@@ -62,7 +60,6 @@ resource "aws_iam_role" "nodes_general" {
 }
 POLICY
 }
-
 
 # Resource: aws_iam_role_policy_attachment
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment
