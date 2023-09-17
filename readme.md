@@ -69,3 +69,37 @@ kubectl apply -f argocd.yaml
 echo $ARGOCD_SERVER
 echo $ARGO_PWD
 ```
+
+Helm installation
+```
+wget https://get.helm.sh/helm-v3.9.3-linux-amd64.tar.gz
+tar xvf helm-v3.9.3-linux-amd64.tar.gz
+sudo mv linux-amd64/helm /usr/local/bin
+rm helm-v3.9.3-linux-amd64.tar.gz
+rm -rf linux-amd64
+helm version
+```
+
+For Prometheus setup
+```
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl create ns prometheus
+helm repo add stable https://charts.helm.sh/stable
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+helm install stable prometheus-community/kube-prometheus-stack --namespace prometheus
+kubectl get all -n prometheus
+kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
+kubectl get svc -n prometheus
+```
+Note: Do the changes as ClusterIP to LoadBalancer
+Finally, You have to take the load balancer URL with port 9090
+
+### Testing:
+Run the query:
+```
+rate(container_cpu_usage_seconds_total{namespace="myapp"}[1m])
+```
+
+<img width="925" alt="image" src="https://github.com/satyam19arya/K8s_EKS_terraform/assets/77580311/82390a60-581c-451c-b0ae-358f72506ddd">
+
