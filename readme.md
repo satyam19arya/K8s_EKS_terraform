@@ -106,3 +106,16 @@ rate(container_cpu_usage_seconds_total{namespace="myapp"}[1m])
 
 <img width="925" alt="image" src="https://github.com/satyam19arya/K8s_EKS_terraform/assets/77580311/82390a60-581c-451c-b0ae-358f72506ddd">
 
+### Grafana setup
+```
+kubectl create namespace grafana
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm install grafana grafana/grafana --namespace grafana --set service.type=LoadBalancer
+kubectl get svc --namespace grafana -w grafana
+```
+
+To get password
+```
+kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
