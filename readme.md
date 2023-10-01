@@ -89,10 +89,13 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm repo update
 helm install stable prometheus-community/kube-prometheus-stack --namespace prometheus
 kubectl get all -n prometheus
+```
+Now we want to access the Prometheus dashboard on the web so that we can be able to scrape the metrics and we can add them as a Data Source in the Grafana.
+We need to edit the service file ClusterIP into LoadBalancer so that our Prometheus will be able to run on the web.
+```
 kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
 kubectl get svc -n prometheus
 ```
-Note: Do the changes as ClusterIP to LoadBalancer
 Finally, You have to take the load balancer URL with port 9090
 
 ### Testing:
