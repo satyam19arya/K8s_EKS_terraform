@@ -82,7 +82,6 @@ helm version
 
 For Prometheus setup
 ```
-kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 kubectl create ns prometheus
 helm repo add stable https://charts.helm.sh/stable
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
@@ -119,3 +118,5 @@ To get password
 ```
 kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
+
+To setup dashboard: Enter the 15661 dashboard id
