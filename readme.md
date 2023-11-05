@@ -119,4 +119,4 @@ To get password
 kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 
-To setup dashboard: Enter the 15661 dashboard id
+To setup dashboard: Enter the dashboard id - 15661, 3119
