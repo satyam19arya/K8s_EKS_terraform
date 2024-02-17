@@ -1,7 +1,7 @@
 # Provisioning the Amazon EKS cluster using Terraform
 
 ## Architecture
- <img width="659" alt="image" src="https://github.com/satyam19arya/K8s_EKS_terraform/assets/77580311/aa56d89e-2ede-46d5-85a5-9f2fecad4200">
+![image](https://github.com/satyam19arya/K8s_EKS_terraform/assets/77580311/af6d0776-c7a3-492e-8166-42312f84a0a9)
 
 
 ## Steps
@@ -103,7 +103,7 @@ Run the query:
 rate(container_cpu_usage_seconds_total{namespace="myapp"}[1m])
 ```
 
-<img width="925" alt="image" src="https://github.com/satyam19arya/K8s_EKS_terraform/assets/77580311/82390a60-581c-451c-b0ae-358f72506ddd">
+<img width="525" alt="image" src="https://github.com/satyam19arya/K8s_EKS_terraform/assets/77580311/82390a60-581c-451c-b0ae-358f72506ddd">
 
 ### Grafana setup
 ```
