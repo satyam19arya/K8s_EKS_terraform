@@ -120,3 +120,5 @@ kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-passwor
 ```
 
 To setup dashboard: Enter the dashboard id - 15661, 3119
+
+Ref: https://grafana.com/grafana/dashboards/
