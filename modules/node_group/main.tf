@@ -1,11 +1,6 @@
 resource "aws_eks_node_group" "nodes_general" {
-  # Name of the EKS Cluster.
   cluster_name = var.EKS_CLUSTER_NAME
-
-  # Name of the EKS Node Group.
   node_group_name = "${var.EKS_CLUSTER_NAME}-NG"
-
-  # Amazon Resource Name (ARN) of the IAM Role that provides permissions for the EKS Node Group.
   node_role_arn = var.NODE_GROUP_ARN
 
   subnet_ids = [
@@ -14,13 +9,8 @@ resource "aws_eks_node_group" "nodes_general" {
   ]
 
   scaling_config {
-    # Desired number of worker nodes.
     desired_size = 2
-
-    # Maximum number of worker nodes.
     max_size = 2
-
-    # Minimum number of worker nodes.
     min_size = 2
   }
 
@@ -32,9 +22,6 @@ resource "aws_eks_node_group" "nodes_general" {
 
   # Disk size in GiB for worker nodes
   disk_size = 20
-
-  # Force version update if existing pods are unable to be drained due to a pod disruption budget issue.
-  force_update_version = false
 
   # List of instance types associated with the EKS Node Group
   instance_types = ["t3.medium"]
@@ -49,4 +36,9 @@ resource "aws_eks_node_group" "nodes_general" {
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Node Group handling.
   # Otherwise, EKS will not be able to properly delete EC2 Instances and Elastic Network Interfaces.
+  # depends_on = [
+  #   aws_iam_role_policy_attachment.amazon_eks_worker_node_policy_general,
+  #   aws_iam_role_policy_attachment.amazon_eks_cni_policy_general,
+  #   aws_iam_role_policy_attachment.amazon_ec2_container_registry_read_only,
+  # ]
 }
