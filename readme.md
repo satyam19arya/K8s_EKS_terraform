@@ -1,8 +1,7 @@
 # Provisioning the Amazon EKS cluster using Terraform
 
 ## Architecture
-![image](https://github.com/satyam19arya/K8s_EKS_terraform/assets/77580311/af6d0776-c7a3-492e-8166-42312f84a0a9)
-
+<img width="596" alt="image" src="https://github.com/satyam19arya/K8s_EKS_terraform/assets/77580311/744e97af-2dbe-4f70-b815-d42ce95d30e6">
 
 ## Steps
 1️⃣ Clone the repo first
@@ -33,7 +32,7 @@ terraform {
 Go to K8s_EKS_terraform/main/terraform.tfvars
 ```javascript
 REGION           = "us-east-1"
-PROJECT_NAME     = "Todo-App-EKS"
+PROJECT_NAME     = "Social-Media"
 VPC_CIDR         = "172.25.0.0/16"
 PUB_SUB_1_A_CIDR = "172.25.1.0/24"
 PUB_SUB_2_B_CIDR = "172.25.2.0/24"
@@ -119,6 +118,6 @@ To get password
 kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 
-To setup dashboard: Enter the dashboard id - 15661, 3119
+To setup dashboard: Enter the dashboard id - 15661
 
 Ref: https://grafana.com/grafana/dashboards/
